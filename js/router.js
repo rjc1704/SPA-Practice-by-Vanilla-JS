@@ -23,11 +23,13 @@ const handleLocation = async () => {
   }
   const route = routes[path] || routes[404];
   const html = await fetch(route).then((data) => data.text());
+
   document.getElementById("main-page").innerHTML = html;
 };
 
 const GoToLorem = () => {
   window.history.pushState({}, "", "#lorem");
+  //   window.location.hash = "#lorem";
   handleLocation();
 };
 
