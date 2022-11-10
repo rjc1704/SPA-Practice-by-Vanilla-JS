@@ -1,9 +1,13 @@
-# vanilla-spa-router
+# 사용설명
 
-A vanilla js solution to routing for a single-page application
+VS Code 사용자의 경우, Live Server Extension 설치 후 사용
+파이참 사용자의 경우, Live Edit Plugin 설치 후 사용
 
-## Try it out
+# Hashed 라우팅 방식
 
-Clone this repo to your machine and start it up in a live server. VSCode has a good extension for this. Then visit the site at localhost on the port your server is running on.
+브라우저는 url path에 #이 있으면 #뒤부터는 별도의 page라고 받아들이지 않으므로 SPA 구현에 매우 적합한 방식.
+바닐라자바스크립트로 일반적인 brower routing 방식을 적용하면 동작은 잘하지만, 새로고침 시 서버에 별도의 url과 html파일 간의 관계를 정의해주지 않으면 안됨.
 
-I also created a codesandbox you can try out [here](https://codesandbox.io/s/vanilla-spa-router-59tyx?file=/js/router.js). You'll have to refresh the preview browser on first load, but it will work just the same otherwise.
+# 코드 참조
+
+https://www.youtube.com/watch?v=ZleShIpv5zQ
