@@ -8,14 +8,14 @@ const route = (event) => {
 const routes = {
   404: "/pages/404.html",
   "/": "/pages/index.html",
-  about: "/pages/about.html",
-  lorem: "/pages/lorem.html",
+  "/about": "/pages/about.html",
+  "/lorem": "/pages/lorem.html",
 };
 
 const handleLocation = async () => {
-  //   const path = window.location.pathname; // browser routing을 사용할 경우 이렇게.
-  //     if (path === "index.html") path = "/";
-  let path = window.location.hash.replace("#", "");
+  const path = window.location.pathname; // browser routing을 사용할 경우 이렇게.
+  if (path === "index.html") path = "/";
+  //   let path = window.location.hash.replace("#", "");
 
   // if the path length is 0, set it to primary page route
   if (path.length == 0) {
@@ -27,14 +27,14 @@ const handleLocation = async () => {
 };
 
 const GoToLorem = () => {
-  window.history.pushState({}, "", "#lorem");
+  window.history.pushState({}, "", "/lorem");
   handleLocation();
 };
 
-// window.onpopstate = handleLocation; // 뒤로가기도 hashchange 이벤트 감지에 포함되어 동작함.
-window.route = route;
+window.onpopstate = handleLocation; // 뒤로가기도 hashchange 이벤트 감지에 포함되어 동작함.
+// window.route = route;
 
-window.addEventListener("hashchange", handleLocation);
+// window.addEventListener("hashchange", handleLocation);
 
 document.addEventListener("DOMContentLoaded", function () {
   handleLocation();
