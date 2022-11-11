@@ -1,8 +1,7 @@
 const route = (event) => {
   event = event || window.event;
   event.preventDefault();
-  window.history.pushState({}, "", event.target.href);
-  handleLocation();
+  window.location.hash = event.target.hash;
 };
 
 const routes = {
@@ -28,13 +27,10 @@ const handleLocation = async () => {
 };
 
 const GoToLorem = () => {
-  window.history.pushState({}, "", "#lorem");
-  //   window.location.hash = "#lorem";
-  handleLocation();
+  window.location.hash = "#lorem";
 };
 
-// window.onpopstate = handleLocation; // 뒤로가기도 hashchange 이벤트 감지에 포함되어 동작함.
-window.route = route;
+// window.route = route; // js 파일을 쪼개어 module로 사용할 때 변수나 함수를 전역화할 필요 있음
 
 window.addEventListener("hashchange", handleLocation);
 
