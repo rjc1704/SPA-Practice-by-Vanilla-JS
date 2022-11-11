@@ -16,7 +16,7 @@ const handleLocation = async () => {
   //     if (path === "index.html") path = "/";
   let path = window.location.hash.replace("#", "");
 
-  // if the path length is 0, set it to primary page route
+  // "http://example.com/"가 아니라 도메인 뒤에 / 없이 "http://example.com" 으로 나오는 경우
   if (path.length == 0) {
     path = "/";
   }
@@ -32,8 +32,10 @@ const GoToLorem = () => {
 
 // window.route = route; // js 파일을 쪼개어 module로 사용할 때 변수나 함수를 전역화할 필요 있음
 
+// hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
 
+// 첫 랜딩 또는 새로고침 시 처리
 document.addEventListener("DOMContentLoaded", function () {
   handleLocation();
 });
