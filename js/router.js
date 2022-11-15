@@ -12,8 +12,6 @@ const routes = {
 };
 
 const handleLocation = async () => {
-  //   const path = window.location.pathname; // browser routing을 사용할 경우 이렇게.
-  //     if (path === "index.html") path = "/";
   let path = window.location.hash.replace("#", "");
 
   // "http://example.com/"가 아니라 도메인 뒤에 / 없이 "http://example.com" 으로 나오는 경우
@@ -29,8 +27,6 @@ const handleLocation = async () => {
 const GoToLorem = () => {
   window.location.hash = "#lorem";
 };
-
-// window.route = route; // js 파일을 쪼개어 module로 사용할 때 변수나 함수를 전역화할 필요 있음
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
