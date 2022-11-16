@@ -11,7 +11,7 @@ const routes = {
 };
 
 const handleLocation = async () => {
-  let path = window.location.hash.replace("#", "");
+  let path = window.location.hash.replace("#", ""); //#about -> about
 
   // "http://example.com/"가 아니라 도메인 뒤에 / 없이 "http://example.com" 으로 나오는 경우
   if (path.length == 0) {
@@ -31,6 +31,4 @@ const GoToLorem = () => {
 window.addEventListener("hashchange", handleLocation);
 
 // 첫 랜딩 또는 새로고침 시 처리
-document.addEventListener("DOMContentLoaded", function () {
-  handleLocation();
-});
+document.addEventListener("DOMContentLoaded", handleLocation);
