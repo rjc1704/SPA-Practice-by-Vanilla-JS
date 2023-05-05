@@ -1,13 +1,23 @@
+import about from "./pages/About.js";
+import home from "./pages/Home.js";
+import lorem from "./pages/Lorem.js";
+import NotFound from "./pages/NotFound.js";
+
 const route = (event) => {
   event.preventDefault();
   window.location.hash = event.target.hash;
 };
+window.route = route;
 
 const routes = {
-  404: "/pages/404.html",
-  "/": "/pages/index.html",
-  about: "/pages/about.html",
-  lorem: "/pages/lorem.html",
+  // 404: "/pages/404.html",
+  404: NotFound,
+  // "/": "/pages/index.html",
+  "/": home,
+  // about: "/pages/about.html",
+  about,
+  // lorem: "/pages/lorem.html",
+  lorem,
 };
 
 const handleLocation = async () => {
@@ -17,15 +27,18 @@ const handleLocation = async () => {
   if (path.length == 0) {
     path = "/";
   }
-  const route = routes[path] || routes[404];
-  const html = await fetch(route).then((data) => data.text());
+  // const route = routes[path] || routes[404];
 
-  document.getElementById("main-page").innerHTML = html;
+  // const html = await fetch(route).then((data) => data.text());
+  const html = routes[path] || routes[404];
+
+  document.getElementById("main-page").innerHTML = html.template();
 };
 
 const GoToLorem = () => {
   window.location.hash = "#lorem";
 };
+window.GoToLorem = GoToLorem;
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
