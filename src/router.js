@@ -32,7 +32,7 @@ const handleLocation = async () => {
   // const html = await fetch(route).then((data) => data.text());
   const html = routes[path] || routes[404];
 
-  document.getElementById("main-page").innerHTML = html.template();
+  document.getElementById("root").innerHTML = html.template();
 };
 
 const GoToLorem = () => {
