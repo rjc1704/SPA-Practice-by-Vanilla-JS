@@ -1,7 +1,7 @@
 import about from "./pages/About.js";
 import home from "./pages/Home.js";
 import lorem from "./pages/Lorem.js";
-import NotFound from "./pages/NotFound.js";
+import notFound from "./pages/NotFound.js";
 
 const route = (event) => {
   event.preventDefault();
@@ -10,14 +10,10 @@ const route = (event) => {
 window.route = route;
 
 const routes = {
-  // 404: "/pages/404.html",
-  404: NotFound,
-  // "/": "/pages/index.html",
-  "/": home,
-  // about: "/pages/about.html",
-  about,
-  // lorem: "/pages/lorem.html",
-  lorem,
+  404: notFound(),
+  "/": home(),
+  about: about(),
+  lorem: lorem(),
 };
 
 const handleLocation = async () => {
@@ -32,7 +28,7 @@ const handleLocation = async () => {
   // const html = await fetch(route).then((data) => data.text());
   const html = routes[path] || routes[404];
 
-  document.getElementById("root").innerHTML = html.template();
+  document.getElementById("root").innerHTML = html;
 };
 
 const GoToLorem = () => {

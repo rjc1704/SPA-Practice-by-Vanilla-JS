@@ -1,13 +1,10 @@
-class NotFound {
-  template() {
-    return `
+function notFound() {
+  return `
         <div style="text-align: center">
-        <h1>404 Not Found</h1>
-        <p>Oh no! It looks like the page you're trying to get to is missing!</p>
-    </div>
-    
+          <h1>404 Not Found</h1>
+          <p>Oh no! It looks like the page you're trying to get to is missing!</p>
+      </div>
         `;
-  }
 }
 
-export default new NotFound();
+export default notFound;

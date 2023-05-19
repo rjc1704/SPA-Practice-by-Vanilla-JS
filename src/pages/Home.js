@@ -1,6 +1,5 @@
-class Home {
-  template() {
-    return `
+function home() {
+  return `
         <div class="page-container">
             <h1 style="align-self: center">Home</h1>
             <p>
@@ -15,6 +14,5 @@ class Home {
             <button onclick="GoToLorem()">Go to Lorem Page</button>
     </div>
         `;
-  }
 }
-export default new Home();
+export default home;

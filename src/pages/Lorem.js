@@ -1,6 +1,5 @@
-class Lorem {
-  template() {
-    return `
+function lorem() {
+  return `
         <div class="page-container align-center">
             <h1>Lorem Ipsum</h1>
             <p>
@@ -27,6 +26,5 @@ class Lorem {
     </div>
     
         `;
-  }
 }
-export default new Lorem();
+export default lorem;
