@@ -23,9 +23,7 @@ const handleLocation = async () => {
   if (path.length == 0) {
     path = "/";
   }
-  // const route = routes[path] || routes[404];
 
-  // const html = await fetch(route).then((data) => data.text());
   const html = routes[path] || routes[404];
 
   document.getElementById("root").innerHTML = html;
