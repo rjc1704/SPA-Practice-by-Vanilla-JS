@@ -1,6 +1,9 @@
-class Home {
-  render() {
-    document.getElementById("root").innerHTML = `
+import Page from "./Page";
+
+class Home extends Page {
+  constructor() {
+    super();
+    this.htmlString = `
         <div class="page-container">
             <h1 style="align-self: center">Home</h1>
             <p>

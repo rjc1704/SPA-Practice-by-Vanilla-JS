@@ -1,6 +1,9 @@
-class About {
-  render() {
-    document.getElementById("root").innerHTML = `
+import Page from "./Page";
+
+class About extends Page {
+  constructor() {
+    super();
+    this.htmlString = `
         <div class="page-container align-center">
             <h1>About</h1>
             <h2> 배워가면 좋을 점</h2>

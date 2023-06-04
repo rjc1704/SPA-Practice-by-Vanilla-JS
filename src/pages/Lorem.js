@@ -1,6 +1,9 @@
-class Lorem {
-  render() {
-    document.getElementById("root").innerHTML = `
+import Page from "./Page";
+
+class Lorem extends Page {
+  constructor() {
+    super();
+    this.htmlString = `
         <div class="page-container align-center">
             <h1>Lorem Ipsum</h1>
             <p>

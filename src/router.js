@@ -13,7 +13,7 @@ const routes = {
 let goToLoremBtn;
 
 export const renderPage = async () => {
-  const path = window.location.hash;
+  const path = window.location.hash || "#/";
 
   const selectedPage = routes[path] ?? routes[404];
   selectedPage.render();

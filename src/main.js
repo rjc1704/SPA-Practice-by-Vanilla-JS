@@ -10,5 +10,5 @@ sidebar.addEventListener("click", (event) => {
   event.preventDefault();
   if (event.target === sidebar) return;
 
-  window.location.hash = event.target.hash || "#/";
+  window.location.hash = event.target.hash;
 });
