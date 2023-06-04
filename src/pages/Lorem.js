@@ -1,5 +1,6 @@
-function lorem() {
-  return `
+class Lorem {
+  render() {
+    document.getElementById("root").innerHTML = `
         <div class="page-container align-center">
             <h1>Lorem Ipsum</h1>
             <p>
@@ -23,8 +24,8 @@ function lorem() {
                 fugiat nostrum quia quos doloremque quibusdam suscipit accusamus molestias temporibus ex facilis eos pariatur
                 vel enim!
             </p>
-    </div>
-    
-        `;
+        </div>
+              `;
+  }
 }
-export default lorem;
+export default Lorem;

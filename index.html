@@ -6,19 +6,16 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    <script src="src/main.js" type="module"></script>
 </head>
 
 <body>
-    <div id="container">
-        <nav id="main-nav" class="sidebar">
-            <a href="/" onclick="route(event)">Home</a>
-            <a href="#about" onclick="route(event)">About</a>
-            <a href="#lorem" onclick="route(event)">Lorem</a>
-        </nav>
-        <div id="root"></div>
-    </div>
-
-    <script type="module" src="src/router.js"></script>
+    <nav class="sidebar">
+        <a href="#/">Home</a>
+        <a href="#/about">About</a>
+        <a href="#/lorem">Lorem</a>
+    </nav>
+    <div id="root"></div>
 </body>
 
 </html>

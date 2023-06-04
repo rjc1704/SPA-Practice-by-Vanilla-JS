@@ -1,41 +1,34 @@
-import about from "./pages/About.js";
-import home from "./pages/Home.js";
-import lorem from "./pages/Lorem.js";
-import notFound from "./pages/NotFound.js";
-
-const route = (event) => {
-  event.preventDefault();
-  window.location.hash = event.target.hash;
-};
-window.route = route;
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Lorem from "./pages/Lorem";
+import NotFound from "./pages/NotFound";
 
 const routes = {
-  404: notFound(),
-  "/": home(),
-  about: about(),
-  lorem: lorem(),
+  404: new NotFound(),
+  "#/": new Home(),
+  "#/about": new About(),
+  "#/lorem": new Lorem(),
 };
 
-const handleLocation = async () => {
-  let path = window.location.hash.replace("#", ""); //#about -> about
+let goToLoremBtn;
 
-  // "http://example.com/"가 아니라 도메인 뒤에 / 없이 "http://example.com" 으로 나오는 경우
-  if (path.length == 0) {
-    path = "/";
+export const renderPage = async () => {
+  const path = window.location.hash;
+
+  const selectedPage = routes[path] ?? routes[404];
+  selectedPage.render();
+
+  if (path !== "#/" && goToLoremBtn) {
+    goToLoremBtn.removeEventListener("click", goToLorem);
   }
 
-  const html = routes[path] || routes[404];
+  goToLoremBtn = document.querySelector(".go-to-lorem") ?? null;
 
-  document.getElementById("root").innerHTML = html;
+  if (goToLoremBtn) {
+    goToLoremBtn.addEventListener("click", goToLorem);
+  }
 };
 
-const GoToLorem = () => {
-  window.location.hash = "#lorem";
-};
-window.GoToLorem = GoToLorem;
-
-// hash url 변경 시 처리
-window.addEventListener("hashchange", handleLocation);
-
-// 첫 랜딩 또는 새로고침 시 처리
-document.addEventListener("DOMContentLoaded", handleLocation);
+function goToLorem() {
+  window.location.hash = "#/lorem";
+}

@@ -1,24 +1,18 @@
-function about() {
-  return `
+class About {
+  render() {
+    document.getElementById("root").innerHTML = `
         <div class="page-container align-center">
             <h1>About</h1>
-            <div>Check Out the Socials</div>
-            <hr />
-            <div class="socials-container">
-                <a href="https://www.youtube.com/channel/UC6pFfiYWbtNkU-u2ZXUfzZw" class="socials-card" target="_blank">
-                    <i class="mdi mdi-youtube"></i>
-                    <span>YouTube</span>
-                </a>
-                <a href="https://github.com/mitchwadair" class="socials-card" target="_blank">
-                    <i class="mdi mdi-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://twitter.com/imMtB_" class="socials-card" target="_blank">
-                    <i class="mdi mdi-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-            </div>
+            <h2> 배워가면 좋을 점</h2>
+            
+            <ul>
+                <li>Hashed Routing 적용</li>
+                <li>JS 번들러 Parcel 적용</li>
+                <li>이벤트리스너의 추가와 제거</li>
+                <li>class 를 이용한 렌더링 로직 캡슐화</li>
+            </ul>
         </div>
         `;
+  }
 }
-export default about;
+export default About;

@@ -1,0 +1,15 @@
+{
+  "name": "vanilla-spa-router",
+  "version": "1.0.0",
+  "description": "VS Code 사용자의 경우, Live Server Extension 설치 후 사용",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.1"
+  }
+}
